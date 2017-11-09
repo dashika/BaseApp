@@ -1,6 +1,6 @@
 # BaseApp
 
-Base template for most application on XAMARIN Froms.
+Base template for most application on XAMARIN Forms.
 ---
 ## DEMO
 
