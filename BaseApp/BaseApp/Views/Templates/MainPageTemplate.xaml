@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<templates:BaseMainPagetemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:BaseApp.Controls;assembly=BaseApp"
+             xmlns:templates="clr-namespace:BaseApp.Views.Templates;assembly=BaseApp"
+              x:Class="BaseApp.Views.Templates.MainPageTemplate"
+             x:Name="MainTemplateLayout"
+             ParentContentPage="{TemplateBinding Parent}">
+    <StackLayout.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>
+                0, 20, 0, 0
+            </OnPlatform.iOS>
+            <OnPlatform.Android>
+                0, 0, 0, 0
+            </OnPlatform.Android>
+            <OnPlatform.WinPhone>
+                0, 0, 0, 0
+            </OnPlatform.WinPhone>
+        </OnPlatform>
+    </StackLayout.Padding>
+    <StackLayout
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand">
+        <StackLayout     
+			HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <RelativeLayout
+                    x:Name="MainContentLayout"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+					BackgroundColor="Transparent">
+                <Grid
+                          RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
+                          BackgroundColor="Transparent"
+                          RowSpacing="0"
+                          Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="52" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="44" />
+                    </Grid.RowDefinitions>
+
+                    <StackLayout
+						Grid.Row="0"
+						Grid.Column="0"
+                        x:Name="TopMenuLayout"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        Orientation="Vertical"
+						HeightRequest="50"
+                        Spacing="0"
+                        Padding="0">
+                        <controls:NavigationBar x:Name="LayoutTopMenu" BindingContext="{TemplateBinding Parent.BindingContext}" />
+                    </StackLayout>
+                    <StackLayout 
+                        Grid.Row="0"
+						Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        HeightRequest="1"
+                        BackgroundColor="Silver"/>
+
+                    <StackLayout
+							Grid.Row="1"
+							Grid.Column="0"
+							HorizontalOptions="FillAndExpand"
+                    		VerticalOptions="FillAndExpand">
+                        <ContentPresenter
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"/>
+
+                    </StackLayout>
+                    <Grid
+							  x:Name="PopupPanel"
+                              Grid.Row="1"
+                              Grid.Column="0"
+                              VerticalOptions="End"
+                              HeightRequest="40">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                    </Grid>
+                    <StackLayout
+							Grid.Row="2"
+							Grid.Column="0"
+                            x:Name="BottonMenuLayout"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="End"
+                            Orientation="Vertical"
+							HeightRequest="44"	
+                            BackgroundColor="Transparent"
+                            Spacing="0"
+                            Padding="0">
+                        <controls:BottomMenu x:Name="LayoutBottomMenu"  BindingContext="{TemplateBinding Parent.BindingContext}"/>
+                    </StackLayout>
+                </Grid>
+                <StackLayout
+                            x:Name="StackLayoutSlidingMenu"
+                            IsVisible="False"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-1}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+                    <controls:SlideMenu x:Name="LayoutSlideMenu" BindingContext="{TemplateBinding Parent.BindingContext}"/>
+                </StackLayout>
+            </RelativeLayout>
+        </StackLayout>
+    </StackLayout>
+</templates:BaseMainPagetemplate>

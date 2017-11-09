@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout
+		  xmlns="http://xamarin.com/schemas/2014/forms"
+		  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="BaseApp.Controls.NavigationBar"
+          xmlns:localControls="clr-namespace:BaseApp.Controls;assembly=BaseApp"
+          Orientation="Horizontal"
+		  HeightRequest="50"
+          BackgroundColor="#45D6D6"
+		  HorizontalOptions="FillAndExpand"
+		  Spacing="0">
+    <Grid
+      HorizontalOptions="FillAndExpand"
+      VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout
+              Grid.Column="0"
+              Grid.Row="0"
+			  x:Name="LeftLayout"
+			  Orientation="Horizontal"
+			  VerticalOptions="FillAndExpand"
+              HorizontalOptions="Start"
+			  BackgroundColor="Transparent"
+              MinimumHeightRequest="70"
+              Spacing="2"
+			  Margin="5, 0, 0, 0">
+
+            <localControls:ItemBar
+                      x:Name="ImageBack"
+                      AutomationId="ImageBack"
+                      Icon="back_new.png"
+                      IsVisibleItem="false"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Start"
+                      WidthRequest="35"
+                      HeightRequest="35" />
+            <localControls:ItemBar
+                      x:Name="ImageMenu"
+                      AutomationId="ImageMenu"
+                      Icon="buttonMenu_new.png"
+                      IsVisibleItem="false"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      WidthRequest="35"
+                      HeightRequest="35"
+                      />
+        </StackLayout>
+
+        <!--Center Layout-->
+        <StackLayout
+                Grid.Column="1"
+                Grid.Row="0"
+			    x:Name="CenterLayout"
+			    Orientation="Horizontal"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+			    BackgroundColor="Transparent"
+                Spacing="0">
+                <Image Source="fat_cat_icon" HeightRequest="35" WidthRequest="35"/>
+
+        </StackLayout>
+        <!--Right Layout-->
+        <StackLayout
+                Grid.Column="2"
+                Grid.Row="0"
+			    x:Name="RightLayout"
+			    Orientation="Horizontal"
+                HorizontalOptions="Start"
+			    VerticalOptions="Start"
+			    BackgroundColor="Transparent"
+                Spacing="0">
+            <SearchBar x:Name="searchBar" WidthRequest="250" />
+            <Image IsVisible="False" Source="ic_search.png" HeightRequest="35" WidthRequest="35"/>
+        </StackLayout>
+    </Grid>
+</StackLayout>

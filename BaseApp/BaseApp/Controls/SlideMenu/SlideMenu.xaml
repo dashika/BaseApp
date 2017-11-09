@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BaseApp.Controls.SlideMenu"           
+             xmlns:localControls="clr-namespace:BaseApp.Controls;assembly=BaseApp"
+             xmlns:cell="clr-namespace:BaseApp.Controls.Cell;assembly=BaseApp"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand"
+             Spacing="0"
+             Padding="0"
+             BackgroundColor="Transparent">
+    <RelativeLayout HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand">
+
+        <localControls:GestureFrame x:Name="CloseMenuFrame"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                   Padding="0"
+                   BackgroundColor="Transparent"/>
+
+        <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 BackgroundColor="Black"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0.7}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+            <ListView
+                x:Name="MenuListView"
+                AutomationId="MenuListView"
+                RowHeight="60"
+                SeparatorVisibility="None"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="White">
+                <ListView.Header>
+                    <StackLayout
+                      Orientation="Vertical"
+                      Spacing="0"
+                      Padding="0"
+                      BackgroundColor="#2289AB">
+                        <Image
+                            Source="Nerd_Cat_icon"
+                            HeightRequest="100"
+                            WidthRequest="100"  />
+                        <Label Margin="5" Text="Name"/>
+                        <Label Margin="5" Text="Description"/>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cell:SlideMenuItemCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </RelativeLayout>
+</StackLayout>

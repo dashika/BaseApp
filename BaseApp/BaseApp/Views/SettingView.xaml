@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:BaseApp.Views;assembly=BaseApp"
+    x:Class="BaseApp.Views.SettingView">
+    <ContentView ControlTemplate="{StaticResource MainPageTemplate}">
+        <StackLayout>
+            <Label Text="Settings" />
+            <Image
+                    Source="cat_drink"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    />
+        </StackLayout>
+    </ContentView>
+</views:BaseContentPage>

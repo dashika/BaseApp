@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<localControls:ItemBarBase
+		xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:localControls="clr-namespace:BaseApp.Controls;assembly=BaseApp"
+        x:Class="BaseApp.Controls.ItemBar"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+    <StackLayout
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+        <StackLayout
+                x:Name="ImageLayout"
+                 AutomationId="ImageLayout"
+                 HorizontalOptions="Center"
+                 VerticalOptions="CenterAndExpand"
+                 WidthRequest="50"
+                 HeightRequest="35">
+            <Image
+                 x:Name="Image"
+                 AutomationId="Image"
+                 HorizontalOptions="End"
+                 VerticalOptions="CenterAndExpand"
+                 WidthRequest="35"
+                 HeightRequest="35" />
+        </StackLayout>
+
+        <Label
+		    x:Name="Label"
+		    Text=""
+		    FontSize="14"
+		    TextColor="Gray"
+		    HorizontalOptions="CenterAndExpand"
+		    LineBreakMode="NoWrap"
+		    VerticalOptions="CenterAndExpand"
+		    BackgroundColor="Transparent" />
+    </StackLayout>
+</localControls:ItemBarBase>
