@@ -118,6 +118,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\CustomGestureListener.cs" />
     <Compile Include="Renderers\GestureFrameRenderer.cs" />
+    <Compile Include="Renderers\SearchPageRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -225,6 +226,10 @@
     <AndroidResource Include="..\BaseApp\Images\AndroidDrawable\ic_search.png">
       <Link>Resources\drawable\ic_search.png</Link>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\MainMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />

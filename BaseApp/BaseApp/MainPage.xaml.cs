@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using BaseApp.Views;
 
 namespace BaseApp
 {
-	public partial class MainPage 
+    public partial class MainPage 
 	{
 		public MainViewModel Model;
 
 		public MainPage()
 		{
 			InitializeComponent();
-
+		    Navigation.PushAsync(new SearchingPage());
 			Model = BindingContext as MainViewModel;
 			if (null == Model) return;
 			Model.View = this;
