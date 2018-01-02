@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+BaseApp/BaseApp.Android/bin/
+BaseApp/BaseApp.Android/obj/
+BaseApp/BaseApp/obj/
+packages/
+BaseApp/BaseApp/bin/
+BaseApp/BaseApp.iOS/obj/
+.vs/

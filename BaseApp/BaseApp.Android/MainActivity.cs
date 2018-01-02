@@ -12,7 +12,9 @@ namespace BaseApp.Droid
 	[Activity(Label = "BaseApp", Icon = "@drawable/Nerd_Cat_icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
-		protected override void OnCreate(Bundle bundle)
+	    public static Android.Support.V7.Widget.Toolbar ToolBar { get; private set; }
+
+        protected override void OnCreate(Bundle bundle)
 		{
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
@@ -23,7 +25,13 @@ namespace BaseApp.Droid
 			LoadApplication(new App());
 		}
 
-		public override async void OnBackPressed()
+	    public override bool OnCreateOptionsMenu(IMenu menu)
+	    {
+	        ToolBar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+	        return base.OnCreateOptionsMenu(menu);
+	    }
+
+        public override async void OnBackPressed()
 		{
 			bool? result = await App.CallHardwareBackPressed();
 			if (result == true)
